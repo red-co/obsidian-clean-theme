@@ -9,7 +9,7 @@ dark
 
 # install
 download clean-theme.css
-move to  of snippets or themes.
+move to  folder of snippets or themes.
 
 # others
 none
