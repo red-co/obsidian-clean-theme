@@ -1,0 +1,226 @@
+/*
+1.Indent distance，
+1.1 页边距
+2.hover elements，
+2.1 top elements
+2.2 link
+6. remove some line border
+
+7.change variables color
+
+*/
+/*==1.缩进==*/
+body {
+--list-indent: 1.5em;
+}
+
+
+.workspace-tabs .view-header {
+    height: 2em;
+}
+
+
+/*
+===hiden left sidebar===
+--------------------------- --------------------------- 
+	Dock/Sidebar Layout W11-Styling
+--------------------------- --------------------------- 
+*/
+
+/* Left dock Ribbon hidden (includes expand button) */
+.workspace-ribbon{
+	visibility:collapse;
+	position:absolute;
+}
+
+/* Show expand button when hovered */
+.workspace-ribbon-collapse-btn,
+.side-dock-actions,
+.side-dock-settings{
+	position:fixed;
+	visibility:visible;
+	top:0;
+	opacity:0;
+	padding:7px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background, 0.1s opacity;
+}
+
+/* Fix left ribbon position for easier hovering */
+.workspace-ribbon.side-dock-ribbon.mod-left .workspace-ribbon-collapse-btn{
+	left:-1px; 
+}
+
+.side-dock-actions{
+	top:initial;
+	bottom:114px;
+	left:-23px;
+	padding:0;
+}
+.side-dock-settings{
+	top:initial;
+	bottom:0;
+	left:-23px;
+	margin-bottom:0;
+	padding:0;
+}
+.side-dock-ribbon-action{
+	color:var(--text-muted);
+	padding:7px;
+}
+
+.mod-right.workspace-ribbon,
+.mod-right .workspace-ribbon-collapse-btn{
+	right:0;
+}
+.workspace-ribbon-collapse-btn:hover,
+.side-dock-actions:hover,
+.side-dock-settings:hover{
+	visibility:visible;
+	opacity:1;
+	background:var(--button-hover);
+	border:1px solid var(--color-gray);
+	color:var(--color-dark-gray);
+}
+.side-dock-actions:hover,
+.side-dock-settings:hover{
+	left:0;
+}
+
+
+/* folder title */
+.pt-custom-vault-banner .nav-folder-title[data-path="/"] {
+display:none
+}
+
+
+/* link */
+
+/* 未创建的链接的颜色 */
+.markdown-source-view.mod-cm6 .is-unresolved {
+opacity: 0.5;
+}
+
+
+
+.markdown-source-view.mod-cm6 .cm-underline {
+    text-decoration: none;
+}
+.cm-s-obsidian span.cm-hmd-internal-link :hover {
+opacity: 0.7
+}
+
+
+
+
+
+/*======5.plugins======*/
+/* file-tree-alternative */
+#file-tree-divider {
+display: none;
+}
+.oz-folders-action-items, .oz-flex-container {
+    margin-bottom: 3px;
+    background: none; 
+    border: none;
+}
+
+.oz-file-tree-header {
+    margin-top: inherit;
+    text-align: left;
+    min-width: fit-content;
+    padding: inherit;
+}
+
+.file-tree-header-fixed {
+    display: flex;
+}
+
+.oz-flex-container {
+    padding: 0 1em 0 0;
+}
+
+.workspace-tab-header-container {
+    height: 2em;
+}
+
+
+
+/*===============6.清除线条==============*/
+/* 清除所有的明显的线条 */
+
+
+.workspace-tabs .view-header {
+    border-bottom: none
+}
+
+.workspace-tab-header-container {
+    border-bottom:none ;
+    background-color: var(--background-secondary-alt)
+}
+.titlebar {
+border-bottom: none
+}
+
+titlebar-button {
+background-color: var(--background-secondary-alt) !important
+}
+
+:is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:first-child {
+    border-bottom: none
+}
+:is(.backlink-pane, .outgoing-link-pane) > .tree-item-self:nth-last-child(2) {
+    border-top: none;
+    border-bottom: none;
+}
+
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle, .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
+    border-right-style: none; 
+}
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+	border-bottom-style: none;
+}
+
+
+.ͼ1 .cm-gutterElement {
+    color: #272f45;
+}
+
+
+
+
+/*===================7.colors==================*/
+.theme-light {
+--background-primary: #eff4f5;
+--background-primary-alt: #e8e3e3;
+--background-secondary: #e5eaf0;
+--background-secondary-alt: #e5f2f0;
+}
+.theme-dark {
+--background-primary: #020715;
+--background-primary-alt: #564141;
+--background-secondary: #050b1a;
+--background-secondary-alt: #050b1a;
+--text-muted: rgb(121, 157, 160);
+--text-color:rgb(107, 137, 156);
+
+}
+
+.markdown-source-view.mod-cm6 .cm-content {
+	color: var(--text-color);
+}
+.is-folder-active {
+    color: var(--text-color);
+	border-bottom: #292929 solid 1px;
+}
+.inline-title {
+	color: var(--text-color);
+}
+.oz-file-tree-header {
+	color: var(--text-color);
+}
+
+.oz-folder-toggle {
+	filter: hue-rotate(198deg);
+}
